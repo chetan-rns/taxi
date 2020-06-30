@@ -19,9 +19,8 @@ func main() {
 
 	fs := http.FileServer(http.Dir(*wwwRoot))
 	http.Handle("/", addVersionHeader(fs))
-
+	http.HandleFunc("/greet", hello)
 	addr := fmt.Sprintf(":%d", *port)
-	log.Printf("versio %s listening on %s\n", CommitSHA[:6], addr)
 	log.Fatal(http.ListenAndServe(addr, nil))
 }
 
@@ -30,4 +29,8 @@ func addVersionHeader(h http.Handler) http.Handler {
 		w.Header().Add("DemoVersion", CommitSHA)
 		h.ServeHTTP(w, r)
 	})
+}
+
+func hello(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("Hello World!"))
 }
