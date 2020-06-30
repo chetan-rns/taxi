@@ -32,5 +32,5 @@ func addVersionHeader(h http.Handler) http.Handler {
 }
 
 func hello(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Hello World!"))
+	w.Write([]byte("Hello GitOps!"))
 }
