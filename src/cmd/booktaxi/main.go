@@ -16,10 +16,9 @@ var (
 
 func main() {
 	flag.Parse()
-	log.Println("GitOps Demo")
+	log.Println("GitOps Demo!!!")
 	fs := http.FileServer(http.Dir(*wwwRoot))
 	http.Handle("/", addVersionHeader(fs))
-	http.HandleFunc("/greet", hello)
 	addr := fmt.Sprintf(":%d", *port)
 	log.Fatal(http.ListenAndServe(addr, nil))
 }
@@ -31,6 +30,3 @@ func addVersionHeader(h http.Handler) http.Handler {
 	})
 }
 
-func hello(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Hello GitOps!"))
-}
