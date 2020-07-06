@@ -16,7 +16,7 @@ var (
 
 func main() {
 	flag.Parse()
-	log.Println("GitOps!")
+	log.Println("GitOps Demo!!")
 	fs := http.FileServer(http.Dir(*wwwRoot))
 	http.Handle("/", addVersionHeader(fs))
 	addr := fmt.Sprintf(":%d", *port)
