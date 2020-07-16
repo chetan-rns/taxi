@@ -16,7 +16,7 @@ var (
 
 func main() {
 	flag.Parse()
-	log.Println("Hello World!!!")
+	log.Println("This is from push event!")
 	fs := http.FileServer(http.Dir(*wwwRoot))
 	http.Handle("/", addVersionHeader(fs))
 	addr := fmt.Sprintf(":%d", *port)
