@@ -28,6 +28,14 @@ spec:
         - name: http
           containerPort: 8080
           protocol: TCP
+      initContainers:
+      - name: my-init-container-1
+        image: busybox
+        command: ['sh', '-c', 'echo my-init-container-1 start; sleep 2;echo my-init-container-1 complete;']
+      - name: my-init-container-2
+        image: busybox
+        command: ['sh', '-c', 'echo my-init-container-2 start; sleep 2;echo my-init-container-2 complete;']
+
       volumes:
       - name: web-files
         configMap:
