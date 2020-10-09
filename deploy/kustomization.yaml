@@ -1,6 +1,7 @@
 resources:
 - deployment.yaml
 - service.yaml
+- pod.yaml
 configMapGenerator:
 - name: www-files
   files:
