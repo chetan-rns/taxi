@@ -6,3 +6,6 @@ configMapGenerator:
 - name: www-files
   files:
   - index.html
+
+commonLabels:
+  name: chetan-rns
