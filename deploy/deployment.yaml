@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: taxi-2
-        image: quay.io/cbanavik/taxi
+        image: upshift.mirror-registry.qe.devcluster.openshift.com:5000/cbanavik/taxi:latest
         imagePullPolicy: Always
         volumeMounts:
         - name: web-files
