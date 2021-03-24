@@ -1,6 +1,7 @@
 resources:
 - deployment.yaml
 - service.yaml
+- serviceaccount.yaml
 configMapGenerator:
 - name: www-files
   files:
